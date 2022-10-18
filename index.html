@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Fylo data storage component</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="main">
+      <div class="left">
+        <div class="logo">
+          <img src="/images/logo.svg" alt="">
+        </div>
+        <div class="icon_holder">
+          <div class="icons">
+            <img src="/images/icon-document.svg" alt="">
+          </div>
+          <div class="icons">
+            <img src="/images/icon-folder.svg" alt="">
+          </div>
+          <div class="icons">
+            <img src="/images/icon-upload.svg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="msg">
+          You’ve used <strong><output id="rangevalue">0</output> GB </strong>of your storage
+        </div>
+        <div class="bar">
+          <input type="range" name="Data_used" class="Data_used" min="0" max="100" value="0" oninput="rangevalue.value=(value*10);
+            data_left.value = (max - value)*10">
+        </div>
+        <div class="tags">
+          <span class="left_tag">
+            0 GB
+          </span>
+          <span class="right_tag">
+            1000 GB
+          </span>
+        </div>
+      </div>
+      <div class="count_holder">
+        <div class="counting">
+          <strong><output id="data_left">1000</output></strong> <span>GB Left</span>
+        </div>
+        <div class="right_box">
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="#">Priyanshu Agarwal</a>.
+      </div>
+    </div>
+  </div>
+
+</body>
+<script>
+
+  function initialize() {
+    slider.value = 0;
+    slider.style.backgroundSize = '0% 100%'
+  }
+  function handleInputChange(e) {
+    let target = e.target
+    if (e.target.type !== 'range') {
+      target = document.getElementById('range')
+    }
+    const min = target.min
+    const max = target.max
+    const val = target.value
+
+    target.style.backgroundSize = (val - min) * 100 / (max - min) + '% 100%'
+  }
+
+  window.onload = initialize;
+  const slider = document.querySelector(".Data_used")
+  slider.addEventListener('input', handleInputChange);
+</script>
+
+</html>
