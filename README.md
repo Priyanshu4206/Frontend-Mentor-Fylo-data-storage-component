@@ -28,7 +28,7 @@ Users should be able to:
 ![Screenshot for Mobile View](/Mobile_view.png)
 ### Links
 
-- Live Site URL: [Frontend Mentor - Fylo data storage component]()
+- Live Site URL: [Frontend Mentor - Fylo data storage component](https://fylo-data-storage-pa.netlify.app/)
 
 ## My process
 
@@ -47,5 +47,5 @@ Users should be able to:
 
 ## Author
 
-- Website - [Frontend Mentor - Fylo data storage component]()
+- Website - [Frontend Mentor - Fylo data storage component](https://fylo-data-storage-pa.netlify.app/)
 - Frontend Mentor - [@Priyanshu4206](https://www.frontendmentor.io/profile/Priyanshu4206)
